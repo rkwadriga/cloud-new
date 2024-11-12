@@ -1,6 +1,7 @@
 /.idea/
 /.docker/composer/tmp/
 /.docker/php/logs/
+/.docker/pgsql/data/
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php

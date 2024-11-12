@@ -11,4 +11,5 @@ RUN pecl install xdebug \
     && docker-php-ext-install intl \
     && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd \
+    && docker-php-ext-enable xdebug
