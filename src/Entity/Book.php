@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\BookRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use DateTimeInterface;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 #[ApiResource]
@@ -29,7 +30,7 @@ class Book
     private ?string $author = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $publicationDate = null;
+    private ?DateTimeInterface $publicationDate = null;
 
     public function getId(): ?int
     {
@@ -91,12 +92,12 @@ class Book
         return $this;
     }
 
-    public function getPublicationDate(): ?\DateTimeInterface
+    public function getPublicationDate(): ?DateTimeInterface
     {
         return $this->publicationDate;
     }
 
-    public function setPublicationDate(?\DateTimeInterface $publicationDate): static
+    public function setPublicationDate(?DateTimeInterface $publicationDate): static
     {
         $this->publicationDate = $publicationDate;
 
